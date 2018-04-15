@@ -25,6 +25,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.block.Action;
+import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.block.SignChangeEvent;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.player.*;
@@ -36,7 +37,6 @@ import org.bukkit.scoreboard.Objective;
 
 import java.util.ArrayList;
 import java.util.UUID;
-import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 /**
@@ -119,6 +119,18 @@ public class GeneralMechanics extends Mechanic {
         idObjective.setDisplaySlot(DisplaySlot.PLAYER_LIST);
 
         EnumRank.createTeams(); // Create all the rank teams, in order.
+    }
+
+    /********************************************
+     * Disabling of slime placement
+     *******************************************/
+
+    @EventHandler(ignoreCancelled = true)
+    public void onBlockPlace(BlockPlaceEvent evt) {
+        if("world_the_end".equalsIgnoreCase(evt.getPlayer().getWorld().getName()) && Material.SLIME_BLOCK.equals(evt.getBlockPlaced().getType())) {
+            evt.setCancelled(true);
+            evt.getPlayer().sendMessage(ChatColor.RED + "The placement of slime blocks has been disabled to prevent the creation of flying machines.");
+        }
     }
 
     @EventHandler // Handle repeating songs.
