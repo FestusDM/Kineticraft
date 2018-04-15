@@ -1,8 +1,12 @@
 &8Changes:
--Promotions:
- -xCassyx -> Jr. Dev.
- -juhobuild -> Jr. Builder
- -_Magic_Turtle_ -> Jr. Builder
--Fixed staff permissions
--Apply for warps using the /warpform command!
- -Warp applications...for Warps (Wahhhhhttt? It's a thing!)
+&8Changes:
+-Updated Plugins
+ -Nuvotifier
+ -ImageOnMap
+ -BuyCraft
+-Made changes to Grief Prevention settings - voted by the community!
+ -All wooden doors are now locked by default, now no one can open your doors without your permission!
+ -To give your friends ability to open doors within a claim use /accesstrust (user) command
+ -To give everyone ability to open doors within a claim use /accesstrust public command
+ -Remember that with /accesstrust you can give player permission to: open doors, use switches, buttons, levers, and beds!
+-Got questions, comments, concerns, or need help? Ask the community! We're on Discord! Use /discord to get started!
